@@ -1,0 +1,278 @@
+{
+ "characters": {
+  "mileo_chen": {
+   "display_name": "Mileo Chen",
+   "eyes": "vivid green",
+   "scars": [
+    "Link nodule base of skull (pre-cut)",
+    "nape extraction scar (post-cut)",
+    "Serpent Coil LEFT wrist indigo bioluminescence (post-cut only)"
+   ],
+   "invariants": [
+    "East Asian male ~32",
+    "black regulation hair 3.2 cm",
+    "Coil NEVER on right wrist",
+    "blank hexagonal badge geometry only — no readable text",
+    "same face lock LOCK_SHEET_MILEO_CHEN"
+   ]
+  },
+  "kora_vega": {
+   "display_name": "Kora Vega",
+   "eyes": "brown with indigo flecks",
+   "scars": [
+    "fibrous Link extraction ridge behind RIGHT ear",
+    "bone-conduction implant under LEFT clavicle"
+   ],
+   "invariants": [
+    "Latina mestiza woman ~24",
+    "dark practical shoulder-length hair 28-35 cm",
+    "copper-bronze vest on female Kora only",
+    "shock pistol abstract no logos",
+    "same face lock LOCK_SHEET_KORA_VEGA"
+   ]
+  },
+  "sierra_catalano": {
+   "display_name": "Sierra Catalano",
+   "eyes": "hazel",
+   "scars": [
+    "pale scar LEFT cheek temple to jaw"
+   ],
+   "invariants": [
+    "European-descent commander ~33-38",
+    "dark practical commander hair 8-12 cm, tied/pulled back as FC-S08 (Director 2026-10-05)",
+    "black combat pants + weathered leather jacket",
+    "scar NEVER on right cheek",
+    "same face lock LOCK_SHEET_SIERRA_CATALANO"
+   ]
+  },
+  "okafor": {
+   "display_name": "Dr. Marcus Okafor",
+   "eyes": "kind exhausted dark",
+   "scars": [],
+   "invariants": [
+    "West African-descent features ~50s",
+    "short greying hair",
+    "stained field-medic apron over dark layers",
+    "NO logos NO readable text",
+    "biomedical scanner wand abstract glow only"
+   ]
+  },
+  "riv": {
+   "display_name": "Riv",
+   "eyes": "sleep-deprived red-rimmed",
+   "scars": [],
+   "invariants": [
+    "wiry transmissions engineer",
+    "fingers stained cobalt-blue conductive gel",
+    "small silver compass pendant no logos",
+    "grease-stained tech layers",
+    "same face once introduced"
+   ]
+  }
+ },
+ "locations": {
+  "sector_17_link": {
+   "aliases": [
+    "Sector 17 alley grate link",
+    "ventilation grate mouth"
+   ],
+   "fog": "medium-high rust vapor + cold rain mist",
+   "palette_hex": [
+    "#708090",
+    "#C0C0C0",
+    "#4682B4",
+    "#000000",
+    "#301934",
+    "#0080FF"
+   ]
+  },
+  "tunnel_six": {
+   "aliases": [
+    "legacy storm-drain",
+    "steam main corridor"
+   ],
+   "fog": "high mildew/steam haze",
+   "palette_hex": [
+    "#FF8C00",
+    "#FFBF00",
+    "#B87333",
+    "#708090",
+    "#301934",
+    "#000000"
+   ]
+  },
+  "medical_bay_yggdrasil": {
+   "aliases": [
+    "makeshift medical extraction bay",
+    "surgical gurney bay"
+   ],
+   "fog": "low-medium clinical haze",
+   "palette_hex": [
+    "#C0C0C0",
+    "#708090",
+    "#B87333",
+    "#0080FF",
+    "#4682B4",
+    "#000000",
+    "#301934"
+   ]
+  },
+  "vent_shaft": {
+   "aliases": [
+    "Sector 17 ventilation shaft",
+    "blast-hatch corridor",
+    "vent_shaft_sanctuary"
+   ],
+   "fog": "medium dust/steam vertical",
+   "palette_hex": [
+    "#708090",
+    "#C0C0C0",
+    "#B87333",
+    "#FF8C00",
+    "#000000",
+    "#301934"
+   ]
+  },
+  "underbelly_alley": {
+   "aliases": [
+    "sector_17_alley",
+    "Sector 17 alley night"
+   ],
+   "fog": "medium rust vapor",
+   "palette_hex": [
+    "#708090",
+    "#C0C0C0",
+    "#F8F8FF",
+    "#4682B4",
+    "#000000",
+    "#301934"
+   ]
+  },
+  "neo_citania_glass": {
+   "aliases": [
+    "neo_citania_skyline",
+    "surface towers"
+   ],
+   "fog": "low desalted haze",
+   "palette_hex": [
+    "#F8F8FF",
+    "#FFFFFF",
+    "#4682B4",
+    "#C0C0C0",
+    "#708090",
+    "#301934"
+   ]
+  },
+  "forgotten_tunnels": {
+   "aliases": [
+    "forgotten labyrinth",
+    "branching tunnels"
+   ],
+   "fog": "high mildew labyrinth haze",
+   "palette_hex": [
+    "#708090",
+    "#301934",
+    "#FF8C00",
+    "#B87333",
+    "#000000",
+    "#4B0082"
+   ]
+  },
+  "fracturados_redoubt": {
+   "aliases": [
+    "metro redoubt",
+    "copper-mesh blast doors",
+    "command chamber"
+   ],
+   "fog": "low-medium warm dust",
+   "palette_hex": [
+    "#B87333",
+    "#FFD700",
+    "#FFBF00",
+    "#FF8C00",
+    "#708090",
+    "#C0C0C0",
+    "#0080FF",
+    "#000000",
+    "#301934"
+   ]
+  },
+  "residential_mauve_district": {
+   "aliases": [
+    "Subsector Seventeen residential",
+    "surface sidewalk"
+   ],
+   "fog": "low mauve civic veil",
+   "palette_hex": [
+    "#301934",
+    "#F8F8FF",
+    "#FFFFFF",
+    "#4682B4",
+    "#C0C0C0",
+    "#708090",
+    "#000000"
+   ]
+  },
+  "node_17_sanitation_lock": {
+   "aliases": [
+    "Residential Server Node 17 hatch",
+    "sanitation lock"
+   ],
+   "fog": "low-medium hatch void mix",
+   "palette_hex": [
+    "#708090",
+    "#C0C0C0",
+    "#4682B4",
+    "#B87333",
+    "#FF8C00",
+    "#F8F8FF",
+    "#000000",
+    "#301934"
+   ]
+  },
+  "node_17_server_cathedral": {
+   "aliases": [
+    "Residential Server Node 17 interior",
+    "server cathedral",
+    "central vault / core capsule"
+   ],
+   "fog": "medium cold liquid-helium floor mist + blue volumetric shafts",
+   "palette_hex": [
+    "#0080FF",
+    "#4682B4",
+    "#708090",
+    "#C0C0C0",
+    "#000000",
+    "#301934",
+    "#4B0082",
+    "#3F00FF",
+    "#B22222"
+   ]
+  }
+ },
+ "global_negatives": [
+  "readable text",
+  "letters on clothing",
+  "logo",
+  "watermarks",
+  "signage",
+  "carteles",
+  "HUD text",
+  "faction name labels on clothes",
+  "Resistencia as printed label",
+  "Resistance as printed label",
+  "NeuroSys lettering",
+  "Nivel 7 badge text",
+  "Mark",
+  "SIERRA MARK",
+  "upper frame",
+  "lower frame",
+  "quad-split",
+  "diptych",
+  "split-screen",
+  "multi-panel collage",
+  "storyboard tiles",
+  "title cards",
+  "panel language"
+ ]
+}

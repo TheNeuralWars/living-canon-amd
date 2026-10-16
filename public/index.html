@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Living Canon — The Neural Wars on AMD</title>
+<style>
+:root{--ind:#4B0082;--blu:#0080FF;--cop:#B87333;--gold:#FFBF00;--bg:#0b0614}
+body{margin:0;background:radial-gradient(circle at 20% 0,#301934,var(--bg) 60%);color:#eee;font:15px/1.5 system-ui,sans-serif}
+header{padding:20px 28px;border-bottom:1px solid #ffffff18}h1{margin:0;font-size:24px;letter-spacing:.5px}
+h1 span{color:var(--blu)}.sub{color:#aaa}#status{float:right;font-size:12px;padding:4px 10px;border-radius:12px;background:#222}
+main{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px 28px}@media(max-width:900px){main{grid-template-columns:1fr}}
+.lane{background:#ffffff08;border:1px solid #ffffff1a;border-radius:14px;padding:16px}
+select,input,button{background:#140c22;color:#eee;border:1px solid #ffffff30;border-radius:8px;padding:8px}
+button{background:linear-gradient(90deg,var(--ind),var(--blu));border:0;cursor:pointer;font-weight:600}
+button.ch{display:block;width:100%;margin:6px 0;text-align:left;background:#1d1230;border:1px solid var(--cop)}
+.scene h2{color:var(--gold);margin:12px 0 4px}.meta{font-size:12px;color:#9ab}.guard{font-size:12px;margin-top:8px;padding:8px;border-radius:8px;background:#0a1f12}
+.guard.bad{background:#2a0f0f}.prompt{font-size:12px;color:#bbb;background:#00000055;padding:8px;border-radius:8px;white-space:pre-wrap}
+footer{padding:10px 28px;color:#888;font-size:12px}
+</style></head><body>
+<header><div id="status">checking AMD…</div><h1>Living <span>Canon</span> · The Neural Wars</h1>
+<div class="sub">One film universe, a different episode for every viewer — written by Gemma 4 on AMD GPUs, kept on-canon by CanonGuard.</div></header>
+<main><section class="lane" data-default="teen_gamer"></section><section class="lane" data-default="film_buff"></section></main>
+<footer>Model: Gemma-4-31B-IT via AMD Developer Cloud Token Factory (ROCm). Canon source: Fractured Code WORLD_TOKENS. Token counts are real API usage.</footer>
+<template id="t"><div>
+<select class="aud"><option value="teen_gamer">Teen gamer (IT)</option><option value="film_buff">Film buff (EN)</option><option value="accessible">Plain language / audio-description</option><option value="custom">Custom…</option></select>
+<input class="custom" placeholder="describe the viewer" style="display:none;width:60%"> <button class="go">Start episode</button>
+<div class="out"></div></div></template>
+<script>
+fetch('/api/health').then(r=>r.json()).then(h=>{status.textContent=h.amd_key_configured?'● live on AMD · '+h.model:'○ AMD key not set';status.style.color=h.amd_key_configured?'#5f5':'#f85'});
+document.querySelectorAll('.lane').forEach(l=>{
+ l.append(t.content.cloneNode(true));const a=l.querySelector('.aud'),c=l.querySelector('.custom'),o=l.querySelector('.out');a.value=l.dataset.default;
+ a.onchange=()=>c.style.display=a.value=='custom'?'inline':'none';let hist=[];
+ async function step(choice){o.insertAdjacentHTML('beforeend','<p class="meta">Director → CanonGuard → Repair on AMD…</p>');
+  const r=await fetch('/api/episode',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({audience:a.value,custom:a.value=='custom'?c.value:'',choice,history:hist})});
+  const j=await r.json();o.lastElementChild.remove();if(j.error){o.insertAdjacentHTML('beforeend','<p style="color:#f85">'+j.error+'</p>');return}
+  const s=j.scene;hist.push(s.title+': '+(s.narration||'').slice(0,160));const g=j.canon;const ms=j.steps.reduce((x,y)=>x+y.ms,0);
+  const d=document.createElement('div');d.className='scene';
+  d.innerHTML=`<h2>${s.title}</h2><div class="meta">📍 ${s.location_id} · 👥 ${(s.character_ids||[]).join(', ')}</div><p>${s.narration}</p>
+  <div class="meta">🔊 ${s.audio_cue||''}</div><details><summary class="meta">shot prompt (for i2v pipeline)</summary><div class="prompt">${s.image_prompt}</div></details>
+  <div class="guard ${g.remaining_rule_violations.length?'bad':''}">🛡 CanonGuard: ${g.violations_found.length} issue(s) found${g.repaired?', auto-repaired':''} · remaining rule violations: ${g.remaining_rule_violations.length} · critic score ${g.critic_score??'n/a'}/10
+  ${g.violations_found.map(v=>'<br>· '+v.rule+': '+v.detail).join('')}</div>
+  <div class="meta">⚙ ${j.steps.map(x=>x.stage+' '+x.ms+'ms').join(' → ')} · ${j.tokens} tokens · ${j.model}</div>`;
+  (s.choices||[]).forEach(ch=>{const b=document.createElement('button');b.className='ch';b.textContent='▶ '+ch;b.onclick=()=>{d.querySelectorAll('.ch').forEach(x=>x.disabled=true);step(ch)};d.append(b)});
+  o.append(d)}
+ l.querySelector('.go').onclick=()=>{o.innerHTML='';hist=[];step()};});
+</script></body></html>
